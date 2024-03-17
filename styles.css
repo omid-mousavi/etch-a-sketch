@@ -4,10 +4,52 @@
 
 body {
   margin: 0;
-  min-height: 100vh;
-  display: flex;
 }
 
 .full-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.options {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 25%;
+  height: 500px;
+  gap: 16px;
+}
+
+button {
+  font-size: medium;
+  border: 0;
+  padding: 0;
+  width: 55%;
+  height: 10%;
+  border-radius: 50px;
+  background-color: #ff9500;
+  cursor: pointer;
+}
+
+.container {
+  border: 2px solid #000000;
+  width: 500px;
+  height: 500px;
+  display: flex;
+}
+
+.row {
   flex: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.column {
+  flex: auto;
+  border: 1px solid #000000;
+  /* background-color: ? */
 }
