@@ -4,6 +4,7 @@
 
 body {
   margin: 0;
+  background-color: #d1d1d1;
 }
 
 .full-page {
@@ -36,20 +37,20 @@ button {
 }
 
 .container {
+  background-color: #ffffff;
   border: 2px solid #000000;
   width: 500px;
   height: 500px;
   display: flex;
 }
 
-.row {
+.pixel-container {
   flex: auto;
   display: flex;
   flex-direction: column;
 }
 
-.column {
+.pixel {
   flex: auto;
   border: 1px solid #000000;
-  /* background-color: ? */
 }
