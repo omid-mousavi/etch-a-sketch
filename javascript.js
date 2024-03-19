@@ -52,12 +52,18 @@ function removeMouseOverEffet() {
   })
 }
 function resetAll() {
-  pixelContainer = document.querySelectorAll('.pixel-container')
+  pixelContainer = document.querySelectorAll('.pixel-container');
   if(container.hasChildNodes()) {
     pixelContainer.forEach((ele) => {
       ele.remove();
     })
   }
+}
+function resetColor() {
+  pixel = document.querySelectorAll('.pixel');
+  pixel.forEach((element) => {
+    element.style.backgroundColor = '#ffffff';
+  });  
 }
 function eraser() {
   colorInput = '#ffffff';
@@ -72,6 +78,7 @@ const colorAndBorder = document.querySelector('.color-and-border');
 const setBorderAndColor = document.querySelector('#set-border-color');
 const hideBtn = document.querySelector('#hide-border');
 const eraserBtn = document.querySelector('.eraser');
+const resetBtn = document.querySelector('.reset');
 
 let pixelContainer, pixel, colorInput;
 
@@ -103,3 +110,4 @@ hideBtn.addEventListener('click', () => {
 setGridSizeBtn.addEventListener('click', setGridSize);
 setBorderAndColor.addEventListener('click', setGridColorAndBorder);
 eraserBtn.addEventListener('click', eraser);
+resetBtn.addEventListener('click', resetColor);
