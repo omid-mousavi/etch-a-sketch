@@ -59,12 +59,19 @@ function resetAll() {
     })
   }
 }
+function eraser() {
+  colorInput = '#ffffff';
+  pixel.forEach((element) => {
+    element.addEventListener('mousedown', colorizePixelManage)
+  })
+}
 
 const container = document.querySelector('.container');
 const setGridSizeBtn = document.querySelector('.set-grid-size');
 const colorAndBorder = document.querySelector('.color-and-border');
 const setBorderAndColor = document.querySelector('#set-border-color');
 const hideBtn = document.querySelector('#hide-border');
+const eraserBtn = document.querySelector('.eraser');
 
 let pixelContainer, pixel, colorInput;
 
@@ -95,3 +102,4 @@ hideBtn.addEventListener('click', () => {
 })
 setGridSizeBtn.addEventListener('click', setGridSize);
 setBorderAndColor.addEventListener('click', setGridColorAndBorder);
+eraserBtn.addEventListener('click', eraser);
