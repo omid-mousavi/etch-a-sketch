@@ -69,6 +69,23 @@ const hideBtn = document.querySelector('#hide-border');
 let pixelContainer, pixel, colorInput;
 
 
+for(let row = 1; row <= 16; row++) {
+  pixelContainer = document.createElement('div');
+  pixelContainer.classList.add('pixel-container');
+  container.appendChild(pixelContainer);
+  for(let column = 1; column <= 16; column++) {
+    pixel = document.createElement('div');
+    pixel.classList.add('pixel');
+    pixelContainer.appendChild(pixel);
+  }
+}
+pixel = document.querySelectorAll('.pixel');
+pixel.forEach((element) => {
+  element.addEventListener('mousedown', colorizePixelManage)
+})
+colorInput = document.querySelector('#set-color').value;
+
+
 hideBtn.addEventListener('click', () => {
   if(hideBtn.value === 'Hide') {
     hideBtn.value = 'Show';
