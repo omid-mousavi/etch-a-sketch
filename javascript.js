@@ -22,18 +22,28 @@ function setGridSize() {
     element.addEventListener('mousedown', colorizePixelManage)
   })
 }
-function setGridColor() {
-
+function setGridColorAndBorder() {
+  pixel = document.querySelectorAll('.pixel');
+  colorInput = document.querySelector('#set-color').value;
+  if(hideBtn.value === 'Hide') {
+    pixel.forEach((element) => {
+      element.style.border = '0';
+    })
+  } else {
+    pixel.forEach((element) => {
+      element.style.border = '1px solid #000000';
+    })
+  }
 }
 function colorizePixelManage(event) {
-  event.target.style.backgroundColor = 'blue'; // for test
+  event.target.style.backgroundColor = colorInput; // for test
   pixel.forEach((element) => {
     element.addEventListener('mouseover', colorizePixel);
     element.addEventListener('mousedown', removeMouseOverEffet)
   })
 }
 function colorizePixel(event) {
-  event.target.style.backgroundColor = 'blue'; // for test
+  event.target.style.backgroundColor = colorInput; // for test
 }
 function removeMouseOverEffet() {
   pixel.forEach((element) => {
@@ -52,8 +62,19 @@ function resetAll() {
 
 const container = document.querySelector('.container');
 const setGridSizeBtn = document.querySelector('.set-grid-size');
+const colorAndBorder = document.querySelector('.color-and-border');
+const setBorderAndColor = document.querySelector('#set-border-color');
+const hideBtn = document.querySelector('#hide-border');
 
-let pixelContainer, pixel;
+let pixelContainer, pixel, colorInput;
 
 
+hideBtn.addEventListener('click', () => {
+  if(hideBtn.value === 'Hide') {
+    hideBtn.value = 'Show';
+  } else {
+    hideBtn.value = 'Hide';
+  }
+})
 setGridSizeBtn.addEventListener('click', setGridSize);
+setBorderAndColor.addEventListener('click', setGridColorAndBorder);
